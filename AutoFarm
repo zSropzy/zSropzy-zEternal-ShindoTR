@@ -43,7 +43,7 @@ _G.MainTextColor = Color3.fromRGB(255, 255, 255);
 _G.MainColor = Color3.fromRGB(247, 95, 28);
 _G.SliderColor = Color3.fromRGB(247, 95, 28);
 getgenv().speed = 500
-local w = library:CreateWindow("zEternal")
+local w = library:CreateWindow("zEternal AutoFarm")
 if villageplace or game.PlaceId == trainingplace or game.PlaceId == rainplace or game.PlaceId == akatsukiplace or game.PlaceId == forestplace then
 	--AUTOFARM
 	local b = w:CreateFolder("AutoFarm")
@@ -53,48 +53,48 @@ if villageplace or game.PlaceId == trainingplace or game.PlaceId == rainplace or
 		BgColor = Color3.fromRGB(247, 95, 28);
 	}) 
 	local autofarm
-	b:Toggle("AutoFarm",function(bool)
+	b:Toggle("AUTOFARM",function(bool)
 		autofarm = bool
 	end)
 	local candies
-	b:Toggle("Farm candies",function(bool)
+	b:Toggle("FARM CANDIES",function(bool)
 		candies = bool
 	end)
 	local speed
-	b:Slider("Tween Speed",{
+	b:Slider("HILE HIZI",{
 		min = 500; 
-		max = 3000;
+		max = 5000;
 		precise = false;
 		},function(speed)
 		getgenv().speed = speed
 	end)
 	local scrollfarm
-	b:Toggle("Scroll Sniper",function(bool)
+	b:Toggle("SCROLL TOPLAYICI",function(bool)
 		scrollfarm = bool
 	end)
 	local jinfarm
-	b:Toggle("JinFarm (instakill)",function(bool)
+	b:Toggle("TAIL KESICI",function(bool)
 		jinfarm = bool
 	end)
 	local RANKUP
-	b:Toggle("AutoRank",function(bool)
+	b:Toggle("OTO RANK ATLAMA",function(bool)
 		RANKUP = bool
 	end)
 
 	local d = w:CreateFolder("Quests Maker")
-	d:Button("Rushs",function()
+	d:Button("KOS",function()
 		for i = 1,300 do
 			game.Players.LocalPlayer.Character.combat.update:FireServer("rushw")
 			wait(.25)
 		end
 	end)
-	d:Button("Jumps",function()
+	d:Button("ZIPLA",function()
 		for v = 1,300 do
 			game.Players.LocalPlayer.Character.combat.update:FireServer("takemovement2")
 			wait(.25)
 		end
 	end)
-	d:Button("Chakra Charges",function()
+	d:Button("CHAKRA SARJ",function()
 		for i = 1,500 do
 			game.Players.LocalPlayer.Character.combat.update:FireServer("key","c")
 			wait(.1)
@@ -102,13 +102,13 @@ if villageplace or game.PlaceId == trainingplace or game.PlaceId == rainplace or
 			wait(.5)
 		end
 	end)
-	d:Button("Punches",function()
+	d:Button("YUMRUK",function()
 		for i = 1,999 do
 			game.Players.LocalPlayer.Character.combat.update:FireServer("mouse1",true)
 			wait(.3)
 		end
 	end)
-	d:Button("TP TrainLog",function()
+	d:Button("TP VURUS TAHTASI",function()
 		toTarget(player.Character.HumanoidRootPart.Position,workspace.npc.logtraining:FindFirstChild("HumanoidRootPart").Position,CFrame.new(game:GetService("Workspace").npc.logtraining:FindFirstChild("HumanoidRootPart").Position))
 	end)
 
@@ -383,7 +383,7 @@ if warplace then
 		BgColor = Color3.fromRGB(247, 95, 28);
 	}) 
 	local war 
-	c:Toggle("WarMode No Tween",function(bool)
+	c:Toggle("WARMOD MOLA YOK",function(bool)
 		war = bool
 	end)
 	local war2
@@ -393,16 +393,16 @@ if warplace then
 
 	c:Slider("Tween Speed",{
 		min = 500; 
-		max = 3000;
+		max = 5000;
 		precise = false;
 		},function(speed)
 		getgenv().speed = speed
 	end)
 	local reset
-	c:Toggle("Reset after round 21",function(bool)
+	c:Toggle("21 RAUNT BITINCE SIFIRLA",function(bool)
 		reset = bool
 	end)
-	--Suggested by Moddi#2715
+	--Suggested by zSropzy#7175
 	local refresh = c:Label("ROUND COUNTER",{
 		TextSize = 24;
 		TextColor = Color3.fromRGB(255,255,255); 
@@ -533,19 +533,19 @@ if warplace then
 end
 if game.PlaceId == menuplace then
 	--main menu
-	local e = w:CreateFolder("ResetSpins")
+	local e = w:CreateFolder("Spin reset ")
 	local kgs = {}
 	for i,v in pairs(game:GetService("ReplicatedStorage").alljutsu:GetChildren()) do
 		if v:FindFirstChild("KG") then
 			table.insert(kgs, v.Name)
 		end
 	end
-	e:Label("Select the KG slot you want to change",{
+	e:Label("DEGISTIRMEK ISTEDIGIN KG YUVASINI SEC",{
 		TextSize = 15;
 		TextColor = Color3.fromRGB(255,255,255); 
 		BgColor = Color3.fromRGB(247, 95, 28);
 	}) 
-	e:Label("Choose your kgs and press SPIN KG",{
+	e:Label("ISTEDIGINI SEC ve SPIN KG'ye basın",{
 		TextSize = 15;
 		TextColor = Color3.fromRGB(255,255,255); 
 		BgColor = Color3.fromRGB(247, 95, 28);
@@ -553,7 +553,7 @@ if game.PlaceId == menuplace then
 	local b
 	local kgslot
 	local kgvalue
-	e:Dropdown("KG SLOT",{"kg1", "kg2", "kg3", "kg4"},true,function(kgS)
+	e:Dropdown("BLOOD YUVA",{"kg1", "kg2", "kg3", "kg4"},true,function(kgS)
 		b = kgS
 		kgslot = game.Players.LocalPlayer.statz.main:FindFirstChild(b)
 		kgvalue = kgslot.Value
@@ -561,31 +561,31 @@ if game.PlaceId == menuplace then
 		print(kgvalue)
 	end)
 	local a1
-	e:Dropdown("WHAT DO YOU WANT",kgs,true,function(KG1)
+	e:Dropdown("NE ISTIYORSUN",kgs,true,function(KG1)
 		print("Selected: " .. KG1)
 		a1 = KG1
 	end)
 	local a2
-	e:Dropdown("WHAT DO YOU WANT",kgs,true,function(KG2)
+	e:Dropdown("NE ISTIYORSUN",kgs,true,function(KG2)
 		print("Selected: " .. KG2)
 		a2 = KG2
 	end)
 	local a3
-	e:Dropdown("WHAT DO YOU WANT",kgs,true,function(KG3)
+	e:Dropdown("NE ISTIYORSUN",kgs,true,function(KG3)
 		print("Selected: " .. KG3)
 		a3 = KG3
 	end)
 	local a4
-	e:Dropdown("WHAT DO YOU WANT",kgs,true,function(KG4)
+	e:Dropdown("NE ISTIYORSUN",kgs,true,function(KG4)
 		print("Selected: " .. KG4)
 		a4 = KG4
 	end)
 	local a5
-	e:Dropdown("WHAT DO YOU WANT",kgs,true,function(KG5)
+	e:Dropdown("NE ISTIYORSUN",kgs,true,function(KG5)
 		print("Selected: " .. KG5)
 		a5 = KG5
 	end)
-	e:Button("Start Spin KG",function()
+	e:Button("SPIN BASLA",function()
 		kgslot.ChildAdded:Connect(function(yes)
             if yes.Name == "dontspin" then
                 wait(.1)
@@ -624,7 +624,7 @@ if game.PlaceId == menuplace then
 		    end
 		end)
 	end)
-	e:Button("Reset Spin NOW",function()
+	e:Button("Simdi Sifirla",function()
         player.statz.spins:Destroy()
         game:GetService('TeleportService'):Teleport(game.PlaceId, player)	 
     end)
@@ -693,16 +693,16 @@ if game.PlaceId == worldxplace then
     end)
 end
 
-local f = w:CreateFolder("Misc")
+local f = w:CreateFolder("YAPIMCI")
 f:Box("Teleport to PS","string",function(tpps)
     game.Players.LocalPlayer.startevent:FireServer("teleporttoprivate", tpps)
 end)
-f:Label("made by zSropzy#7175",{
+f:Label("zSropzy",{
     TextSize = 15;
     TextColor = Color3.fromRGB(255,255,255); 
     BgColor = Color3.fromRGB(247, 95, 28);
 }) 
-f:Label("zSropzy",{
+f:Label("zSropzy#7175",{
     TextSize = 17;
     TextColor = Color3.fromRGB(255,255,255); 
     BgColor = Color3.fromRGB(247, 95, 28); 
