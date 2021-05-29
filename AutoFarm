@@ -31,7 +31,7 @@ function toTarget(pos, targetPos, targetCFrame)
     if not tween then return err end
 end
 
---loading wally ui revamped By zSropzy#4972
+--loading wally ui revamped By zSropzy#0001
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 _G.ButtonTextColor = Color3.fromRGB(247, 95, 28);
 _G.ButtonColor = Color3.fromRGB(5, 16, 20);
@@ -702,11 +702,11 @@ f:Label("zSropzy",{
     TextColor = Color3.fromRGB(255,255,255); 
     BgColor = Color3.fromRGB(247, 95, 28);
 }) 
-f:Label("zSropzy#4972",{
+f:Label("zSropzy#0001",{
     TextSize = 17;
     TextColor = Color3.fromRGB(255,255,255); 
     BgColor = Color3.fromRGB(247, 95, 28); 
 }) 
 f:Button("Copy Discord Link",function()
-    setclipboard("https://discord.gg/GqJnFKQNsr")
+    setclipboard("https://discord.gg/kMKuyAYWf6")
 end)
